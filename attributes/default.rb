@@ -22,19 +22,19 @@ default['logstash']['instance_default']['create_account'] = true
 default['logstash']['instance_default']['join_groups'] = []
 default['logstash']['instance_default']['homedir'] = '/var/lib/logstash'
 
-default['logstash']['instance_default']['version']        = '1.5.4'
-default['logstash']['instance_default']['source_url']     = 'https://download.elasticsearch.org/logstash/logstash/logstash-1.5.4.tar.gz'
-default['logstash']['instance_default']['checksum']       = 'f03075ee534ce6e7667679447f56543ce05cebbdb7b65a9396a5e538bf3e9fa8'
+default['logstash']['instance_default']['version']        = '2.0.0'
+default['logstash']['instance_default']['source_url']     = 'https://download.elastic.co/logstash/logstash/logstash-2.0.0.tar.gz'
+default['logstash']['instance_default']['checksum']       = ''
 default['logstash']['instance_default']['install_type']   = 'tarball'
 
-default['logstash']['instance_default']['plugins_version']        = '1.4.5'
+default['logstash']['instance_default']['plugins_version']        = '2.0.0'
 default['logstash']['instance_default']['plugins_source_url']     = 'https://download.elasticsearch.org/logstash/logstash/logstash-contrib-1.4.5.tar.gz'
-default['logstash']['instance_default']['plugins_checksum']       = 'e4fa08cac70f97e30d4d043fcab817b72c301631713376c5c21824d5d89cae3e'
+default['logstash']['instance_default']['plugins_checksum']       = 'cd1af534274a8cff35acdea9832ef838d60599ab94cd76b39374fb0f0a2788e0'
 default['logstash']['instance_default']['plugins_install_type']   = 'native' # native|tarball ( only native after 1.5 )
 default['logstash']['instance_default']['plugins_check_if_installed'] = 'lib/logstash/filters/translate.rb'
 
 default['logstash']['instance_default']['log_file']   = 'logstash.log'
-default['logstash']['instance_default']['java_home']  = '/usr/lib/jvm/java-6-openjdk' # openjdk6 on ubuntu
+default['logstash']['instance_default']['java_home']  = default['java']['java_home']
 default['logstash']['instance_default']['xms']        = "#{(node['memory']['total'].to_i * 0.2).floor / 1024}M"
 default['logstash']['instance_default']['xmx']        = "#{(node['memory']['total'].to_i * 0.6).floor / 1024}M"
 default['logstash']['instance_default']['java_opts']  = ''
